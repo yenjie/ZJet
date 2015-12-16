@@ -117,61 +117,76 @@ void ZJetNtuplizer(char *infName)
     ZJetTree ZJet;   
    ZJet.init();
    cout <<"Initialized"<<endl;
-   TLorentzVector genmuplus;
-   TLorentzVector genmuminus;
-   TLorentzVector genZ;
+   
+   Particle genmu1;
+   Particle genmu2;
+   Particle genZ;
 
    Particle mu1;
    Particle mu2;
    Particle Z;
+   
+   TLorentzVector zero;
 
    for (int i=0;i<h.GetEntries();i++)
    {
       h.GetEntry(i);
       if (i%1000==0) cout <<i<<" / "<<h.GetEntries()<<endl;
       ZJet.hiBin=h.evt.hiBin;
+      genZ.p4=zero;
       
       // fill Gen info
+      // Assuming there is only one Z in the event
       for (unsigned int j=0;j<h.genparticle.pt->size();j++){
-         // here we assume there are only two muons in the tree
-	 if (h.genparticle.pdg->at(j)==13){ 
-	 genmuplus.SetPtEtaPhiM( h.genparticle.pt->at(j),   
-                              h.genparticle.eta->at(j),   
-                              h.genparticle.phi->at(j),
-			      0.000511);
- 	 }
-	 if (h.genparticle.pdg->at(j)==-13){ 
-	 genmuminus.SetPtEtaPhiM( h.genparticle.pt->at(j),   
-                              h.genparticle.eta->at(j),   
-                              h.genparticle.phi->at(j),
-			      0.000511);
+         if (fabs(h.genparticle.pdg->at(j))!=13) continue;
+         if (h.genparticle.pt->at(j)<20) continue;
+         if (fabs(h.genparticle.eta->at(j))>2.4) continue;
+         genmu1.SetPtEtaPhiM( 	h.genparticle.pt->at(j),   
+                              	h.genparticle.eta->at(j),   
+                              	h.genparticle.phi->at(j),
+			      	0.105658,
+			      	h.genparticle.chg->at(j));
+ 	 
+	 for (unsigned int k=j+1;k<h.genparticle.pt->size();k++){
+            if (fabs(h.genparticle.pdg->at(k)!=13)) continue;
+            if (h.genparticle.pt->at(k)<20) continue;
+            if (fabs(h.genparticle.eta->at(k))>2.4) continue;
+	    genmu2.SetPtEtaPhiM( 	h.genparticle.pt->at(k),   
+                              		h.genparticle.eta->at(k),   
+                              		h.genparticle.phi->at(k),
+			      		0.105658,
+					h.genparticle.chg->at(k));
+	    genZ.SetP4(genmu1.p4+genmu2.p4,genmu1.charge+genmu2.charge);
+	    if (genZ.charge!=0) continue;
+	    if (genZ.p4.M()<60) continue;		
  	 }		         
       }
-      genZ=genmuplus+genmuminus;
-      ZJet.genZpt=genZ.Pt();
-      ZJet.genZeta=genZ.Eta();
-      ZJet.genZphi=genZ.Phi();
-      ZJet.genZmass=genZ.M();
+      ZJet.genZpt=genZ.p4.Pt();
+      ZJet.genZeta=genZ.p4.Eta();
+      ZJet.genZphi=genZ.p4.Phi();
+      ZJet.genZmass=genZ.p4.M();
       
+      Z.p4=zero;
       // fill Reco info      
       for (unsigned int j=0;j<h.photon.muPt->size();j++) {
-         if (!goodMuon(h.photon,j)||h.photon.muPt->at(j)<20) continue;
+         if (!goodMuon(h.photon,j)||h.photon.muPt->at(j)<20||fabs(h.photon.muEta->at(j))>2.4) continue;
 	 mu1.SetPtEtaPhiM(h.photon.muPt->at(j),h.photon.muEta->at(j),h.photon.muPhi->at(j),0.105658,h.photon.muCharge->at(j));
 	 for (unsigned int k=j+1;k<h.photon.muPt->size();k++) {
-            if (!goodMuon(h.photon,k)||h.photon.muPt->at(k)<20) continue;
+            if (!goodMuon(h.photon,k)||h.photon.muPt->at(k)<20||fabs(h.photon.muEta->at(k))>2.4) continue;
             mu2.SetPtEtaPhiM(h.photon.muPt->at(k),h.photon.muEta->at(k),h.photon.muPhi->at(k),0.105658,h.photon.muCharge->at(k));
             Z.SetP4(mu1.p4+mu2.p4,mu1.charge+mu2.charge);
 	    
 	    if (Z.charge!=0) continue;
 	    if (Z.p4.M()<60) continue;
-	    ZJet.Zpt=Z.p4.Pt();
-	    ZJet.Zeta=Z.p4.Eta();
-	    ZJet.Zphi=Z.p4.Phi();
-	    ZJet.Zmass=Z.p4.M();
-	    ZJet.Zcharge=Z.charge;
          }
          
       }
+      ZJet.Zpt=Z.p4.Pt();
+      ZJet.Zeta=Z.p4.Eta();\
+      
+      ZJet.Zphi=Z.p4.Phi();
+      ZJet.Zmass=Z.p4.M();
+      ZJet.Zcharge=Z.charge;
 
       ZJet.t->Fill();
       tJet->Fill();
