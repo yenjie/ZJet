@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Sat Oct 24 21:28:54 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree trackTree/v1
-// found on file: ../../HiForest2015/Pyquen_Unquenched_AllQCDPhoton30_PhotonFilter20GeV_eta24_TuneZ2_PbPb_5020GeV_0.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -46,37 +46,33 @@ public :
    Float_t         xVtxSim[2];   //[nVtxSim]
    Float_t         yVtxSim[2];   //[nVtxSim]
    Float_t         zVtxSim[2];   //[nVtxSim]
-   Float_t         trkPt[22896];   //[nTrk]
-   Float_t         trkPtError[22896];   //[nTrk]
-   Int_t           trkNHit[22896];   //[nTrk]
-   Int_t           trkNlayer[22896];   //[nTrk]
-   Float_t         trkEta[22896];   //[nTrk]
-   Float_t         trkPhi[22896];   //[nTrk]
-   Int_t           trkCharge[22896];   //[nTrk]
-   Int_t           trkNVtx[22896];   //[nTrk]
+   Float_t         trkPt[24260];   //[nTrk]
+   Float_t         trkPtError[24260];   //[nTrk]
+   UChar_t         trkNHit[24260];   //[nTrk]
+   UChar_t         trkNlayer[24260];   //[nTrk]
+   Float_t         trkEta[24260];   //[nTrk]
+   Float_t         trkPhi[24260];   //[nTrk]
+   Int_t           trkCharge[24260];   //[nTrk]
+   UChar_t         trkNVtx[24260];   //[nTrk]
    Int_t           nTrkTimesnVtx;
-   Bool_t          trkAssocVtx[22896];   //[nTrkTimesnVtx]
-   Bool_t          highPurity[22896];   //[nTrk]
-   Bool_t          tight[22896];   //[nTrk]
-   Bool_t          loose[22896];   //[nTrk]
-   Float_t         trkChi2[22896];   //[nTrk]
-   Float_t         trkNdof[22896];   //[nTrk]
-   Float_t         trkDxy1[22896];   //[nTrk]
-   Float_t         trkDxyError1[22896];   //[nTrk]
-   Float_t         trkDz1[22896];   //[nTrk]
-   Float_t         trkDzError1[22896];   //[nTrk]
-   Float_t         trkDzError2[22896];   //[nTrk]
-   Float_t         trkDxy2[22896];   //[nTrk]
-   Float_t         trkDz2[22896];   //[nTrk]
-   Float_t         trkDxyError2[22896];   //[nTrk]
-   Bool_t          trkFake[22896];   //[nTrk]
-   Int_t           trkAlgo[22896];   //[nTrk]
-   Int_t           trkOriginalAlgo[22896];   //[nTrk]
-   Float_t         trkMVA[22896];   //[nTrk]
-   Int_t           pfType[22896];   //[nTrk]
-   Float_t         pfCandPt[22896];   //[nTrk]
-   Float_t         pfEcal[22896];   //[nTrk]
-   Float_t         pfHcal[22896];   //[nTrk]
+   Bool_t          trkAssocVtx[24260];   //[nTrkTimesnVtx]
+   Bool_t          highPurity[24260];   //[nTrk]
+   Bool_t          tight[24260];   //[nTrk]
+   Bool_t          loose[24260];   //[nTrk]
+   Float_t         trkChi2[24260];   //[nTrk]
+   UChar_t         trkNdof[24260];   //[nTrk]
+   Float_t         trkDxy1[24260];   //[nTrk]
+   Float_t         trkDxyError1[24260];   //[nTrk]
+   Float_t         trkDz1[24260];   //[nTrk]
+   Float_t         trkDzError1[24260];   //[nTrk]
+   Bool_t          trkFake[24260];   //[nTrk]
+   UChar_t         trkAlgo[24260];   //[nTrk]
+   UChar_t         trkOriginalAlgo[24260];   //[nTrk]
+   Float_t         trkMVA[24260];   //[nTrk]
+   Int_t           pfType[24260];   //[nTrk]
+   Float_t         pfCandPt[24260];   //[nTrk]
+   Float_t         pfEcal[24260];   //[nTrk]
+   Float_t         pfHcal[24260];   //[nTrk]
 
    // List of branches
    TBranch        *b_nEv;   //!
@@ -126,10 +122,6 @@ public :
    TBranch        *b_trkDxyError1;   //!
    TBranch        *b_trkDz1;   //!
    TBranch        *b_trkDzError1;   //!
-   TBranch        *b_trkDzError2;   //!
-   TBranch        *b_trkDxy2;   //!
-   TBranch        *b_trkDz2;   //!
-   TBranch        *b_trkDxyError2;   //!
    TBranch        *b_trkFake;   //!
    TBranch        *b_trkAlgo;   //!
    TBranch        *b_trkOriginalAlgo;   //!
@@ -192,10 +184,6 @@ void setupTrackTree(TTree *t,Tracks &tTracks,bool doCheck = 1)
    t->SetBranchAddress("trkDxyError1", tTracks.trkDxyError1, &tTracks.b_trkDxyError1);
    t->SetBranchAddress("trkDz1", tTracks.trkDz1, &tTracks.b_trkDz1);
    t->SetBranchAddress("trkDzError1", tTracks.trkDzError1, &tTracks.b_trkDzError1);
-   t->SetBranchAddress("trkDzError2", tTracks.trkDzError2, &tTracks.b_trkDzError2);
-   t->SetBranchAddress("trkDxy2", tTracks.trkDxy2, &tTracks.b_trkDxy2);
-   t->SetBranchAddress("trkDz2", tTracks.trkDz2, &tTracks.b_trkDz2);
-   t->SetBranchAddress("trkDxyError2", tTracks.trkDxyError2, &tTracks.b_trkDxyError2);
    t->SetBranchAddress("trkFake", tTracks.trkFake, &tTracks.b_trkFake);
    t->SetBranchAddress("trkAlgo", tTracks.trkAlgo, &tTracks.b_trkAlgo);
    t->SetBranchAddress("trkOriginalAlgo", tTracks.trkOriginalAlgo, &tTracks.b_trkOriginalAlgo);
@@ -207,8 +195,8 @@ void setupTrackTree(TTree *t,Tracks &tTracks,bool doCheck = 1)
    if (doCheck) {
       if (t->GetMaximum("nVtx")>2) cout <<"FATAL ERROR: Arrary size of nVtx too small!!!  "<<t->GetMaximum("nVtx")<<endl;
       if (t->GetMaximum("nVtxSim")>2) cout <<"FATAL ERROR: Arrary size of nVtxSim too small!!!  "<<t->GetMaximum("nVtxSim")<<endl;
-      if (t->GetMaximum("nTrk")>22896) cout <<"FATAL ERROR: Arrary size of nTrk too small!!!  "<<t->GetMaximum("nTrk")<<endl;
-      if (t->GetMaximum("nTrkTimesnVtx")>22896) cout <<"FATAL ERROR: Arrary size of nTrkTimesnVtx too small!!!  "<<t->GetMaximum("nTrkTimesnVtx")<<endl;
+      if (t->GetMaximum("nTrk")>24260) cout <<"FATAL ERROR: Arrary size of nTrk too small!!!  "<<t->GetMaximum("nTrk")<<endl;
+      if (t->GetMaximum("nTrkTimesnVtx")>24260) cout <<"FATAL ERROR: Arrary size of nTrkTimesnVtx too small!!!  "<<t->GetMaximum("nTrkTimesnVtx")<<endl;
    }
 }
 

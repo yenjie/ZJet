@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Sat Oct 24 21:28:54 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree HiTree/
-// found on file: ../../HiForest2015/Pyquen_Unquenched_AllQCDPhoton30_PhotonFilter20GeV_eta24_TuneZ2_PbPb_5020GeV_0.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -18,9 +18,9 @@ public :
    ~Evts(){};
 
    // Declaration of leaf types
-   Int_t           run;
-   Int_t           evt;
-   Int_t           lumi;
+   UInt_t          run;
+   ULong64_t       evt;
+   UInt_t          lumi;
    Float_t         vx;
    Float_t         vy;
    Float_t         vz;

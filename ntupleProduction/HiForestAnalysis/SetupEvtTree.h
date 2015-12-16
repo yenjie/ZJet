@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Wed Jan 23 16:17:05 2013 by ROOT version 5.32/00
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree HiTree/
-// found on file: root://eoscms//eos/cms/store/caf/user/velicanu/PA2013_merged/pPb_hiForest2_monster_logerrevent_HI2013_express_v1_210634_210635_v14.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -12,17 +12,15 @@
 #include <TTree.h>
 #include <TBranch.h>
 
-using namespace std;
-
 class Evts {
 public :
    Evts(){};
    ~Evts(){};
 
    // Declaration of leaf types
-   Int_t           run;
-   Int_t           evt;
-   Int_t           lumi;
+   UInt_t          run;
+   ULong64_t       evt;
+   UInt_t          lumi;
    Float_t         vx;
    Float_t         vy;
    Float_t         vz;
@@ -50,7 +48,7 @@ public :
    Int_t           hiNtracksEtaCut;
    Int_t           hiNtracksEtaPtCut;
    Int_t           hiNevtPlane;
-   Float_t         hiEvtPlanes[126]; 
+   Float_t         hiEvtPlanes[58];   //[hiNevtPlane]
 
    // List of branches
    TBranch        *b_run;   //!
@@ -84,6 +82,7 @@ public :
    TBranch        *b_hiNtracksEtaPtCut;   //!
    TBranch        *b_hiNevtPlane;   //!
    TBranch        *b_hiEvtPlanes;   //!
+
 };
 
 
@@ -119,13 +118,10 @@ void setupEvtTree(TTree *t,Evts &tEvts,bool doCheck = 1)
    t->SetBranchAddress("hiNtracksPtCut", &tEvts.hiNtracksPtCut, &tEvts.b_hiNtracksPtCut);
    t->SetBranchAddress("hiNtracksEtaCut", &tEvts.hiNtracksEtaCut, &tEvts.b_hiNtracksEtaCut);
    t->SetBranchAddress("hiNtracksEtaPtCut", &tEvts.hiNtracksEtaPtCut, &tEvts.b_hiNtracksEtaPtCut);
-   if (t->GetBranch("hiNevtPlane")) t->SetBranchAddress("hiNevtPlane", &tEvts.hiNevtPlane, &tEvts.b_hiNevtPlane);
-   if (t->GetBranch("hiEvtPlanes")) t->SetBranchAddress("hiEvtPlanes", tEvts.hiEvtPlanes, &tEvts.b_hiEvtPlanes);
+   t->SetBranchAddress("hiNevtPlane", &tEvts.hiNevtPlane, &tEvts.b_hiNevtPlane);
+   t->SetBranchAddress("hiEvtPlanes", tEvts.hiEvtPlanes, &tEvts.b_hiEvtPlanes);
    if (doCheck) {
-     if (t->GetMaximum("hiNevtPlane")>126) { cout <<"FATAL ERROR: Arrary size of hiNevtPlane too small!!!  "<<t->GetMaximum("hiNevtPlane")<<endl; exit(0);
-     }   }
+      if (t->GetMaximum("hiNevtPlane")>58) cout <<"FATAL ERROR: Arrary size of hiNevtPlane too small!!!  "<<t->GetMaximum("hiNevtPlane")<<endl;
+   }
 }
-
-
-
 

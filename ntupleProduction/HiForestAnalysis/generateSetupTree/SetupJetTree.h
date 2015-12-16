@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Sat Oct 24 21:28:54 2015 by ROOT version 6.02/10
-// from TTree t/akPu3PFpatJets Jet Analysis Tree
-// found on file: ../../HiForest2015/Pyquen_Unquenched_AllQCDPhoton30_PhotonFilter20GeV_eta24_TuneZ2_PbPb_5020GeV_0.root
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
+// from TTree t/akPu3PFpatJetsWithBtagging Jet Analysis Tree
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -21,62 +21,100 @@ public :
    Int_t           evt;
    Float_t         b;
    Int_t           nref;
-   Float_t         rawpt[204];   //[nref]
-   Float_t         jtpt[204];   //[nref]
-   Float_t         jteta[204];   //[nref]
-   Float_t         jty[204];   //[nref]
-   Float_t         jtphi[204];   //[nref]
-   Float_t         jtpu[204];   //[nref]
-   Float_t         jtm[204];   //[nref]
-   Float_t         discr_fr01[204];   //[nref]
-   Float_t         trackMax[204];   //[nref]
-   Float_t         trackSum[204];   //[nref]
-   Int_t           trackN[204];   //[nref]
-   Float_t         trackHardSum[204];   //[nref]
-   Int_t           trackHardN[204];   //[nref]
-   Float_t         chargedMax[204];   //[nref]
-   Float_t         chargedSum[204];   //[nref]
-   Int_t           chargedN[204];   //[nref]
-   Float_t         chargedHardSum[204];   //[nref]
-   Int_t           chargedHardN[204];   //[nref]
-   Float_t         photonMax[204];   //[nref]
-   Float_t         photonSum[204];   //[nref]
-   Int_t           photonN[204];   //[nref]
-   Float_t         photonHardSum[204];   //[nref]
-   Int_t           photonHardN[204];   //[nref]
-   Float_t         neutralMax[204];   //[nref]
-   Float_t         neutralSum[204];   //[nref]
-   Int_t           neutralN[204];   //[nref]
-   Float_t         eMax[204];   //[nref]
-   Float_t         eSum[204];   //[nref]
-   Int_t           eN[204];   //[nref]
-   Float_t         muMax[204];   //[nref]
-   Float_t         muSum[204];   //[nref]
-   Int_t           muN[204];   //[nref]
+   Float_t         rawpt[194];   //[nref]
+   Float_t         jtpt[194];   //[nref]
+   Float_t         jteta[194];   //[nref]
+   Float_t         jty[194];   //[nref]
+   Float_t         jtphi[194];   //[nref]
+   Float_t         jtpu[194];   //[nref]
+   Float_t         jtm[194];   //[nref]
+   Float_t         discr_fr01[194];   //[nref]
+   Float_t         trackMax[194];   //[nref]
+   Float_t         trackSum[194];   //[nref]
+   Int_t           trackN[194];   //[nref]
+   Float_t         trackHardSum[194];   //[nref]
+   Int_t           trackHardN[194];   //[nref]
+   Float_t         chargedMax[194];   //[nref]
+   Float_t         chargedSum[194];   //[nref]
+   Int_t           chargedN[194];   //[nref]
+   Float_t         chargedHardSum[194];   //[nref]
+   Int_t           chargedHardN[194];   //[nref]
+   Float_t         photonMax[194];   //[nref]
+   Float_t         photonSum[194];   //[nref]
+   Int_t           photonN[194];   //[nref]
+   Float_t         photonHardSum[194];   //[nref]
+   Int_t           photonHardN[194];   //[nref]
+   Float_t         neutralMax[194];   //[nref]
+   Float_t         neutralSum[194];   //[nref]
+   Int_t           neutralN[194];   //[nref]
+   Float_t         eMax[194];   //[nref]
+   Float_t         eSum[194];   //[nref]
+   Int_t           eN[194];   //[nref]
+   Float_t         muMax[194];   //[nref]
+   Float_t         muSum[194];   //[nref]
+   Int_t           muN[194];   //[nref]
+   Float_t         discr_ssvHighEff[194];   //[nref]
+   Float_t         discr_ssvHighPur[194];   //[nref]
+   Float_t         discr_csvMva[194];   //[nref]
+   Float_t         discr_csvSimple[194];   //[nref]
+   Float_t         discr_muByIp3[194];   //[nref]
+   Float_t         discr_muByPt[194];   //[nref]
+   Float_t         discr_prob[194];   //[nref]
+   Float_t         discr_probb[194];   //[nref]
+   Float_t         discr_tcHighEff[194];   //[nref]
+   Float_t         discr_tcHighPur[194];   //[nref]
+   Float_t         ndiscr_ssvHighEff[194];   //[nref]
+   Float_t         ndiscr_ssvHighPur[194];   //[nref]
+   Float_t         ndiscr_csvSimple[194];   //[nref]
+   Float_t         ndiscr_muByPt[194];   //[nref]
+   Float_t         ndiscr_prob[194];   //[nref]
+   Float_t         ndiscr_probb[194];   //[nref]
+   Float_t         ndiscr_tcHighEff[194];   //[nref]
+   Float_t         ndiscr_tcHighPur[194];   //[nref]
+   Float_t         pdiscr_csvSimple[194];   //[nref]
+   Float_t         pdiscr_prob[194];   //[nref]
+   Float_t         pdiscr_probb[194];   //[nref]
+   Int_t           nsvtx[194];   //[nref]
+   Int_t           svtxntrk[194];   //[nref]
+   Float_t         svtxdl[194];   //[nref]
+   Float_t         svtxdls[194];   //[nref]
+   Float_t         svtxdl2d[194];   //[nref]
+   Float_t         svtxdls2d[194];   //[nref]
+   Float_t         svtxm[194];   //[nref]
+   Float_t         svtxpt[194];   //[nref]
+   Int_t           nIPtrk[194];   //[nref]
+   Int_t           nselIPtrk[194];   //[nref]
+   Float_t         mue[194];   //[nref]
+   Float_t         mupt[194];   //[nref]
+   Float_t         mueta[194];   //[nref]
+   Float_t         muphi[194];   //[nref]
+   Float_t         mudr[194];   //[nref]
+   Float_t         muptrel[194];   //[nref]
+   Int_t           muchg[194];   //[nref]
    Int_t           beamId1;
    Int_t           beamId2;
    Float_t         pthat;
-   Float_t         refpt[204];   //[nref]
-   Float_t         refeta[204];   //[nref]
-   Float_t         refy[204];   //[nref]
-   Float_t         refphi[204];   //[nref]
-   Float_t         refdphijt[204];   //[nref]
-   Float_t         refdrjt[204];   //[nref]
-   Float_t         refparton_pt[204];   //[nref]
-   Int_t           refparton_flavor[204];   //[nref]
-   Int_t           refparton_flavorForB[204];   //[nref]
-   Float_t         genChargedSum[204];   //[nref]
-   Float_t         genHardSum[204];   //[nref]
-   Float_t         signalChargedSum[204];   //[nref]
-   Float_t         signalHardSum[204];   //[nref]
+   Float_t         refpt[194];   //[nref]
+   Float_t         refeta[194];   //[nref]
+   Float_t         refy[194];   //[nref]
+   Float_t         refphi[194];   //[nref]
+   Float_t         refdphijt[194];   //[nref]
+   Float_t         refdrjt[194];   //[nref]
+   Float_t         refparton_pt[194];   //[nref]
+   Int_t           refparton_flavor[194];   //[nref]
+   Int_t           refparton_flavorForB[194];   //[nref]
+   Float_t         genChargedSum[194];   //[nref]
+   Float_t         genHardSum[194];   //[nref]
+   Float_t         signalChargedSum[194];   //[nref]
+   Float_t         signalHardSum[194];   //[nref]
    Int_t           ngen;
-   Int_t           genmatchindex[72];   //[ngen]
-   Float_t         genpt[72];   //[ngen]
-   Float_t         geneta[72];   //[ngen]
-   Float_t         geny[72];   //[ngen]
-   Float_t         genphi[72];   //[ngen]
-   Float_t         gendphijt[72];   //[ngen]
-   Float_t         gendrjt[72];   //[ngen]
+   Int_t           genmatchindex[34];   //[ngen]
+   Float_t         genpt[34];   //[ngen]
+   Float_t         geneta[34];   //[ngen]
+   Float_t         geny[34];   //[ngen]
+   Float_t         genphi[34];   //[ngen]
+   Float_t         gendphijt[34];   //[ngen]
+   Float_t         gendrjt[34];   //[ngen]
 
    // List of branches
    TBranch        *b_evt;   //!
@@ -114,6 +152,44 @@ public :
    TBranch        *b_muMax;   //!
    TBranch        *b_muSum;   //!
    TBranch        *b_muN;   //!
+   TBranch        *b_discr_ssvHighEff;   //!
+   TBranch        *b_discr_ssvHighPur;   //!
+   TBranch        *b_discr_csvMva;   //!
+   TBranch        *b_discr_csvSimple;   //!
+   TBranch        *b_discr_muByIp3;   //!
+   TBranch        *b_discr_muByPt;   //!
+   TBranch        *b_discr_prob;   //!
+   TBranch        *b_discr_probb;   //!
+   TBranch        *b_discr_tcHighEff;   //!
+   TBranch        *b_discr_tcHighPur;   //!
+   TBranch        *b_ndiscr_ssvHighEff;   //!
+   TBranch        *b_ndiscr_ssvHighPur;   //!
+   TBranch        *b_ndiscr_csvSimple;   //!
+   TBranch        *b_ndiscr_muByPt;   //!
+   TBranch        *b_ndiscr_prob;   //!
+   TBranch        *b_ndiscr_probb;   //!
+   TBranch        *b_ndiscr_tcHighEff;   //!
+   TBranch        *b_ndiscr_tcHighPur;   //!
+   TBranch        *b_pdiscr_csvSimple;   //!
+   TBranch        *b_pdiscr_prob;   //!
+   TBranch        *b_pdiscr_probb;   //!
+   TBranch        *b_nsvtx;   //!
+   TBranch        *b_svtxntrk;   //!
+   TBranch        *b_svtxdl;   //!
+   TBranch        *b_svtxdls;   //!
+   TBranch        *b_svtxdl2d;   //!
+   TBranch        *b_svtxdls2d;   //!
+   TBranch        *b_svtxm;   //!
+   TBranch        *b_svtxpt;   //!
+   TBranch        *b_nIPtrk;   //!
+   TBranch        *b_nselIPtrk;   //!
+   TBranch        *b_mue;   //!
+   TBranch        *b_mupt;   //!
+   TBranch        *b_mueta;   //!
+   TBranch        *b_muphi;   //!
+   TBranch        *b_mudr;   //!
+   TBranch        *b_muptrel;   //!
+   TBranch        *b_muchg;   //!
    TBranch        *b_beamId1;   //!
    TBranch        *b_beamId2;   //!
    TBranch        *b_pthat;   //!
@@ -180,6 +256,44 @@ void setupJetTree(TTree *t,Jets &tJets,bool doCheck = 1)
    t->SetBranchAddress("muMax", tJets.muMax, &tJets.b_muMax);
    t->SetBranchAddress("muSum", tJets.muSum, &tJets.b_muSum);
    t->SetBranchAddress("muN", tJets.muN, &tJets.b_muN);
+   t->SetBranchAddress("discr_ssvHighEff", tJets.discr_ssvHighEff, &tJets.b_discr_ssvHighEff);
+   t->SetBranchAddress("discr_ssvHighPur", tJets.discr_ssvHighPur, &tJets.b_discr_ssvHighPur);
+   t->SetBranchAddress("discr_csvMva", tJets.discr_csvMva, &tJets.b_discr_csvMva);
+   t->SetBranchAddress("discr_csvSimple", tJets.discr_csvSimple, &tJets.b_discr_csvSimple);
+   t->SetBranchAddress("discr_muByIp3", tJets.discr_muByIp3, &tJets.b_discr_muByIp3);
+   t->SetBranchAddress("discr_muByPt", tJets.discr_muByPt, &tJets.b_discr_muByPt);
+   t->SetBranchAddress("discr_prob", tJets.discr_prob, &tJets.b_discr_prob);
+   t->SetBranchAddress("discr_probb", tJets.discr_probb, &tJets.b_discr_probb);
+   t->SetBranchAddress("discr_tcHighEff", tJets.discr_tcHighEff, &tJets.b_discr_tcHighEff);
+   t->SetBranchAddress("discr_tcHighPur", tJets.discr_tcHighPur, &tJets.b_discr_tcHighPur);
+   t->SetBranchAddress("ndiscr_ssvHighEff", tJets.ndiscr_ssvHighEff, &tJets.b_ndiscr_ssvHighEff);
+   t->SetBranchAddress("ndiscr_ssvHighPur", tJets.ndiscr_ssvHighPur, &tJets.b_ndiscr_ssvHighPur);
+   t->SetBranchAddress("ndiscr_csvSimple", tJets.ndiscr_csvSimple, &tJets.b_ndiscr_csvSimple);
+   t->SetBranchAddress("ndiscr_muByPt", tJets.ndiscr_muByPt, &tJets.b_ndiscr_muByPt);
+   t->SetBranchAddress("ndiscr_prob", tJets.ndiscr_prob, &tJets.b_ndiscr_prob);
+   t->SetBranchAddress("ndiscr_probb", tJets.ndiscr_probb, &tJets.b_ndiscr_probb);
+   t->SetBranchAddress("ndiscr_tcHighEff", tJets.ndiscr_tcHighEff, &tJets.b_ndiscr_tcHighEff);
+   t->SetBranchAddress("ndiscr_tcHighPur", tJets.ndiscr_tcHighPur, &tJets.b_ndiscr_tcHighPur);
+   t->SetBranchAddress("pdiscr_csvSimple", tJets.pdiscr_csvSimple, &tJets.b_pdiscr_csvSimple);
+   t->SetBranchAddress("pdiscr_prob", tJets.pdiscr_prob, &tJets.b_pdiscr_prob);
+   t->SetBranchAddress("pdiscr_probb", tJets.pdiscr_probb, &tJets.b_pdiscr_probb);
+   t->SetBranchAddress("nsvtx", tJets.nsvtx, &tJets.b_nsvtx);
+   t->SetBranchAddress("svtxntrk", tJets.svtxntrk, &tJets.b_svtxntrk);
+   t->SetBranchAddress("svtxdl", tJets.svtxdl, &tJets.b_svtxdl);
+   t->SetBranchAddress("svtxdls", tJets.svtxdls, &tJets.b_svtxdls);
+   t->SetBranchAddress("svtxdl2d", tJets.svtxdl2d, &tJets.b_svtxdl2d);
+   t->SetBranchAddress("svtxdls2d", tJets.svtxdls2d, &tJets.b_svtxdls2d);
+   t->SetBranchAddress("svtxm", tJets.svtxm, &tJets.b_svtxm);
+   t->SetBranchAddress("svtxpt", tJets.svtxpt, &tJets.b_svtxpt);
+   t->SetBranchAddress("nIPtrk", tJets.nIPtrk, &tJets.b_nIPtrk);
+   t->SetBranchAddress("nselIPtrk", tJets.nselIPtrk, &tJets.b_nselIPtrk);
+   t->SetBranchAddress("mue", tJets.mue, &tJets.b_mue);
+   t->SetBranchAddress("mupt", tJets.mupt, &tJets.b_mupt);
+   t->SetBranchAddress("mueta", tJets.mueta, &tJets.b_mueta);
+   t->SetBranchAddress("muphi", tJets.muphi, &tJets.b_muphi);
+   t->SetBranchAddress("mudr", tJets.mudr, &tJets.b_mudr);
+   t->SetBranchAddress("muptrel", tJets.muptrel, &tJets.b_muptrel);
+   t->SetBranchAddress("muchg", tJets.muchg, &tJets.b_muchg);
    t->SetBranchAddress("beamId1", &tJets.beamId1, &tJets.b_beamId1);
    t->SetBranchAddress("beamId2", &tJets.beamId2, &tJets.b_beamId2);
    t->SetBranchAddress("pthat", &tJets.pthat, &tJets.b_pthat);
@@ -205,8 +319,8 @@ void setupJetTree(TTree *t,Jets &tJets,bool doCheck = 1)
    t->SetBranchAddress("gendphijt", tJets.gendphijt, &tJets.b_gendphijt);
    t->SetBranchAddress("gendrjt", tJets.gendrjt, &tJets.b_gendrjt);
    if (doCheck) {
-      if (t->GetMaximum("nref")>204) cout <<"FATAL ERROR: Arrary size of nref too small!!!  "<<t->GetMaximum("nref")<<endl;
-      if (t->GetMaximum("ngen")>72) cout <<"FATAL ERROR: Arrary size of ngen too small!!!  "<<t->GetMaximum("ngen")<<endl;
+      if (t->GetMaximum("nref")>194) cout <<"FATAL ERROR: Arrary size of nref too small!!!  "<<t->GetMaximum("nref")<<endl;
+      if (t->GetMaximum("ngen")>34) cout <<"FATAL ERROR: Arrary size of ngen too small!!!  "<<t->GetMaximum("ngen")<<endl;
    }
 }
 

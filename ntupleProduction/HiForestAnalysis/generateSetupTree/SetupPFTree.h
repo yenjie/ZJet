@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Wed Dec  9 16:49:28 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree pfTree/dijet tree
-// found on file: ../../jetJEC/2015/mc_merged/PYTHIA_QCD30_TuneCUETP8M1_cfi_RECODEBUGpp_757p1_TAGSignalPP_merged.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -19,11 +19,11 @@ public :
 
    // Declaration of leaf types
    Int_t           nPFpart;
-   Int_t           pfId[1064];   //[nPFpart]
-   Float_t         pfPt[1064];   //[nPFpart]
-   Float_t         pfVsPtInitial[1064];   //[nPFpart]
-   Float_t         pfEta[1064];   //[nPFpart]
-   Float_t         pfPhi[1064];   //[nPFpart]
+   Int_t           pfId[14750];   //[nPFpart]
+   Float_t         pfPt[14750];   //[nPFpart]
+   Float_t         pfVsPtInitial[14750];   //[nPFpart]
+   Float_t         pfEta[14750];   //[nPFpart]
+   Float_t         pfPhi[14750];   //[nPFpart]
    Float_t         vn[5][15];
    Float_t         psin[5][15];
    Float_t         sumpt[15];
@@ -55,7 +55,7 @@ void setupPFTree(TTree *t,PFs &tPFs,bool doCheck = 1)
    t->SetBranchAddress("psin", tPFs.psin, &tPFs.b_vpsi);
    t->SetBranchAddress("sumpt", tPFs.sumpt, &tPFs.b_sumpt);
    if (doCheck) {
-      if (t->GetMaximum("nPFpart")>1064) cout <<"FATAL ERROR: Arrary size of nPFpart too small!!!  "<<t->GetMaximum("nPFpart")<<endl;
+      if (t->GetMaximum("nPFpart")>14750) cout <<"FATAL ERROR: Arrary size of nPFpart too small!!!  "<<t->GetMaximum("nPFpart")<<endl;
    }
 }
 

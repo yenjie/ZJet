@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Sat Oct 24 21:28:54 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree hi/Tree of Hi gen Event
-// found on file: ../../HiForest2015/Pyquen_Unquenched_AllQCDPhoton30_PhotonFilter20GeV_eta24_TuneZ2_PbPb_5020GeV_0.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -77,7 +77,6 @@ public :
 void setupGenParticleTree(TTree *t,GenParticles &tGenParticles,bool doCheck = 1)
 {
    // Set object pointer
-/*
    pt = 0;
    eta = 0;
    phi = 0;
@@ -89,7 +88,6 @@ void setupGenParticleTree(TTree *t,GenParticles &tGenParticles,bool doCheck = 1)
    nDaughters = 0;
    daughterIdx = 0;
    sube = 0;
-   */
    // Set branch addresses and branch pointers
    t->SetBranchAddress("event", &tGenParticles.event, &tGenParticles.b_event);
    t->SetBranchAddress("b", &tGenParticles.b, &tGenParticles.b_b);

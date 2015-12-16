@@ -9,12 +9,7 @@ class ZJetTree
    float Zeta;
    float Zphi;
    float Zmass;
-   float hiBin;
    // Reco level info
-   float Zpt;
-   float Zeta;
-   float Zphi;
-   float Zmass;
    float hiBin;
    TTree *t;
    void init(){
@@ -34,6 +29,7 @@ class ZJetTree
 
 void ZJetNtuplizer(char *infName)
 {
+   // Load hiForest tree
    HiForest h(infName,"",cPbPb);
    h.verbose=0;
    h.hasAkVs2PFJetTree=0;
@@ -46,10 +42,18 @@ void ZJetNtuplizer(char *infName)
    h.hasAkVs4CaloJetTree=0;
    h.hasAkVs5CaloJetTree=0;
    h.hasAkVs6CaloJetTree=0;
+   h.hasSkimTree=0;
    h.hasTrackTree=0;
    h.hasPFTree=0;
    h.InitTree();
+   
+   // output file
    TFile *outf = new TFile("ZJetTree.root","recreate");
+   
+   // clone a jet tree
+   TTree *tJet = h.akPu3PFJetTree->CloneTree(0);
+   tJet->SetMaxTreeSize(4000000000);
+   tJet->SetName("tJet");
    
    ZJetTree ZJet;   
    ZJet.init();
@@ -64,7 +68,7 @@ void ZJetNtuplizer(char *infName)
       if (i%1000==0) cout <<i<<" / "<<h.GetEntries()<<endl;
       ZJet.hiBin=h.evt.hiBin;
       
-      for (int j=0;j<h.genparticle.pt->size();j++){
+      for (unsigned int j=0;j<h.genparticle.pt->size();j++){
          if (h.genparticle.pdg->at(j)==13){ 
 	 muplus.SetPtEtaPhiM( h.genparticle.pt->at(j),   
                               h.genparticle.eta->at(j),   
@@ -85,8 +89,10 @@ void ZJetNtuplizer(char *infName)
       ZJet.Zmass=genZ.M();
       
       ZJet.t->Fill();
+      tJet->Fill();
    }
    ZJet.t->Write();
+   tJet->AutoSave();
    outf->Close();
 
 }

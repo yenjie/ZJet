@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Wed Dec  9 16:49:28 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree EventTree/Event data
-// found on file: ../../jetJEC/2015/mc_merged/PYTHIA_QCD30_TuneCUETP8M1_cfi_RECODEBUGpp_757p1_TAGSignalPP_merged.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -18,10 +18,38 @@ public :
    ~Photons(){};
 
    // Declaration of leaf types
-   Int_t           run;
-   Long64_t        event;
-   Int_t           lumis;
+   UInt_t          run;
+   ULong64_t       event;
+   UInt_t          lumis;
    Bool_t          isData;
+   Int_t           nPUInfo;
+   vector<int>     *nPU;
+   vector<int>     *puBX;
+   vector<float>   *puTrue;
+   Int_t           nMC;
+   vector<int>     *mcPID;
+   vector<int>     *mcStatus;
+   vector<float>   *mcVtx_x;
+   vector<float>   *mcVtx_y;
+   vector<float>   *mcVtx_z;
+   vector<float>   *mcPt;
+   vector<float>   *mcEta;
+   vector<float>   *mcPhi;
+   vector<float>   *mcE;
+   vector<float>   *mcEt;
+   vector<float>   *mcMass;
+   vector<int>     *mcParentage;
+   vector<int>     *mcMomPID;
+   vector<float>   *mcMomPt;
+   vector<float>   *mcMomEta;
+   vector<float>   *mcMomPhi;
+   vector<float>   *mcMomMass;
+   vector<int>     *mcGMomPID;
+   vector<int>     *mcIndex;
+   vector<float>   *mcCalIsoDR03;
+   vector<float>   *mcCalIsoDR04;
+   vector<float>   *mcTrkIsoDR03;
+   vector<float>   *mcTrkIsoDR04;
    Int_t           nEle;
    vector<int>     *eleCharge;
    vector<int>     *eleChargeConsistent;
@@ -89,6 +117,7 @@ public :
    vector<float>   *phoSCBrem;
    vector<int>     *phohasPixelSeed;
    vector<float>   *phoR9;
+   vector<float>   *phoHadTowerOverEm;
    vector<float>   *phoHoverE;
    vector<float>   *phoSigmaIEtaIEta;
    vector<float>   *phoE1x3;
@@ -131,6 +160,7 @@ public :
    vector<float>   *pho_trackIsoR5PtCut20;
    vector<float>   *pho_swissCrx;
    vector<float>   *pho_seedTime;
+   vector<int>     *pho_genMatchedIndex;
    vector<float>   *pfcIso1;
    vector<float>   *pfcIso2;
    vector<float>   *pfcIso3;
@@ -146,6 +176,66 @@ public :
    vector<float>   *pfnIso3;
    vector<float>   *pfnIso4;
    vector<float>   *pfnIso5;
+   vector<float>   *pfcVsIso1;
+   vector<float>   *pfcVsIso2;
+   vector<float>   *pfcVsIso3;
+   vector<float>   *pfcVsIso4;
+   vector<float>   *pfcVsIso5;
+   vector<float>   *pfcVsIso1th1;
+   vector<float>   *pfcVsIso2th1;
+   vector<float>   *pfcVsIso3th1;
+   vector<float>   *pfcVsIso4th1;
+   vector<float>   *pfcVsIso5th1;
+   vector<float>   *pfcVsIso1th2;
+   vector<float>   *pfcVsIso2th2;
+   vector<float>   *pfcVsIso3th2;
+   vector<float>   *pfcVsIso4th2;
+   vector<float>   *pfcVsIso5th2;
+   vector<float>   *pfnVsIso1;
+   vector<float>   *pfnVsIso2;
+   vector<float>   *pfnVsIso3;
+   vector<float>   *pfnVsIso4;
+   vector<float>   *pfnVsIso5;
+   vector<float>   *pfnVsIso1th1;
+   vector<float>   *pfnVsIso2th1;
+   vector<float>   *pfnVsIso3th1;
+   vector<float>   *pfnVsIso4th1;
+   vector<float>   *pfnVsIso5th1;
+   vector<float>   *pfnVsIso1th2;
+   vector<float>   *pfnVsIso2th2;
+   vector<float>   *pfnVsIso3th2;
+   vector<float>   *pfnVsIso4th2;
+   vector<float>   *pfnVsIso5th2;
+   vector<float>   *pfpVsIso1;
+   vector<float>   *pfpVsIso2;
+   vector<float>   *pfpVsIso3;
+   vector<float>   *pfpVsIso4;
+   vector<float>   *pfpVsIso5;
+   vector<float>   *pfpVsIso1th1;
+   vector<float>   *pfpVsIso2th1;
+   vector<float>   *pfpVsIso3th1;
+   vector<float>   *pfpVsIso4th1;
+   vector<float>   *pfpVsIso5th1;
+   vector<float>   *pfpVsIso1th2;
+   vector<float>   *pfpVsIso2th2;
+   vector<float>   *pfpVsIso3th2;
+   vector<float>   *pfpVsIso4th2;
+   vector<float>   *pfpVsIso5th2;
+   vector<float>   *towerIso1;
+   vector<float>   *towerIso2;
+   vector<float>   *towerIso3;
+   vector<float>   *towerIso4;
+   vector<float>   *towerIso5;
+   vector<float>   *towerVsIso1;
+   vector<float>   *towerVsIso2;
+   vector<float>   *towerVsIso3;
+   vector<float>   *towerVsIso4;
+   vector<float>   *towerVsIso5;
+   vector<float>   *towerVsSubIso1;
+   vector<float>   *towerVsSubIso2;
+   vector<float>   *towerVsSubIso3;
+   vector<float>   *towerVsSubIso4;
+   vector<float>   *towerVsSubIso5;
    Int_t           nMu;
    vector<float>   *muPt;
    vector<float>   *muEta;
@@ -175,6 +265,34 @@ public :
    TBranch        *b_event;   //!
    TBranch        *b_lumis;   //!
    TBranch        *b_isData;   //!
+   TBranch        *b_nPUInfo;   //!
+   TBranch        *b_nPU;   //!
+   TBranch        *b_puBX;   //!
+   TBranch        *b_puTrue;   //!
+   TBranch        *b_nMC;   //!
+   TBranch        *b_mcPID;   //!
+   TBranch        *b_mcStatus;   //!
+   TBranch        *b_mcVtx_x;   //!
+   TBranch        *b_mcVtx_y;   //!
+   TBranch        *b_mcVtx_z;   //!
+   TBranch        *b_mcPt;   //!
+   TBranch        *b_mcEta;   //!
+   TBranch        *b_mcPhi;   //!
+   TBranch        *b_mcE;   //!
+   TBranch        *b_mcEt;   //!
+   TBranch        *b_mcMass;   //!
+   TBranch        *b_mcParentage;   //!
+   TBranch        *b_mcMomPID;   //!
+   TBranch        *b_mcMomPt;   //!
+   TBranch        *b_mcMomEta;   //!
+   TBranch        *b_mcMomPhi;   //!
+   TBranch        *b_mcMomMass;   //!
+   TBranch        *b_mcGMomPID;   //!
+   TBranch        *b_mcIndex;   //!
+   TBranch        *b_mcCalIsoDR03;   //!
+   TBranch        *b_mcCalIsoDR04;   //!
+   TBranch        *b_mcTrkIsoDR03;   //!
+   TBranch        *b_mcTrkIsoDR04;   //!
    TBranch        *b_nEle;   //!
    TBranch        *b_eleCharge;   //!
    TBranch        *b_eleChargeConsistent;   //!
@@ -242,6 +360,7 @@ public :
    TBranch        *b_phoSCBrem;   //!
    TBranch        *b_phohasPixelSeed;   //!
    TBranch        *b_phoR9;   //!
+   TBranch        *b_phoHadTowerOverEm;   //!
    TBranch        *b_phoHoverE;   //!
    TBranch        *b_phoSigmaIEtaIEta;   //!
    TBranch        *b_phoE1x3;   //!
@@ -284,6 +403,7 @@ public :
    TBranch        *b_pho_trackIsoR5PtCut20;   //!
    TBranch        *b_pho_swissCrx;   //!
    TBranch        *b_pho_seedTime;   //!
+   TBranch        *b_pho_genMatchedIndex;   //!
    TBranch        *b_pfcIso1;   //!
    TBranch        *b_pfcIso2;   //!
    TBranch        *b_pfcIso3;   //!
@@ -299,6 +419,66 @@ public :
    TBranch        *b_pfnIso3;   //!
    TBranch        *b_pfnIso4;   //!
    TBranch        *b_pfnIso5;   //!
+   TBranch        *b_pfcVsIso1;   //!
+   TBranch        *b_pfcVsIso2;   //!
+   TBranch        *b_pfcVsIso3;   //!
+   TBranch        *b_pfcVsIso4;   //!
+   TBranch        *b_pfcVsIso5;   //!
+   TBranch        *b_pfcVsIso1th1;   //!
+   TBranch        *b_pfcVsIso2th1;   //!
+   TBranch        *b_pfcVsIso3th1;   //!
+   TBranch        *b_pfcVsIso4th1;   //!
+   TBranch        *b_pfcVsIso5th1;   //!
+   TBranch        *b_pfcVsIso1th2;   //!
+   TBranch        *b_pfcVsIso2th2;   //!
+   TBranch        *b_pfcVsIso3th2;   //!
+   TBranch        *b_pfcVsIso4th2;   //!
+   TBranch        *b_pfcVsIso5th2;   //!
+   TBranch        *b_pfnVsIso1;   //!
+   TBranch        *b_pfnVsIso2;   //!
+   TBranch        *b_pfnVsIso3;   //!
+   TBranch        *b_pfnVsIso4;   //!
+   TBranch        *b_pfnVsIso5;   //!
+   TBranch        *b_pfnVsIso1th1;   //!
+   TBranch        *b_pfnVsIso2th1;   //!
+   TBranch        *b_pfnVsIso3th1;   //!
+   TBranch        *b_pfnVsIso4th1;   //!
+   TBranch        *b_pfnVsIso5th1;   //!
+   TBranch        *b_pfnVsIso1th2;   //!
+   TBranch        *b_pfnVsIso2th2;   //!
+   TBranch        *b_pfnVsIso3th2;   //!
+   TBranch        *b_pfnVsIso4th2;   //!
+   TBranch        *b_pfnVsIso5th2;   //!
+   TBranch        *b_pfpVsIso1;   //!
+   TBranch        *b_pfpVsIso2;   //!
+   TBranch        *b_pfpVsIso3;   //!
+   TBranch        *b_pfpVsIso4;   //!
+   TBranch        *b_pfpVsIso5;   //!
+   TBranch        *b_pfpVsIso1th1;   //!
+   TBranch        *b_pfpVsIso2th1;   //!
+   TBranch        *b_pfpVsIso3th1;   //!
+   TBranch        *b_pfpVsIso4th1;   //!
+   TBranch        *b_pfpVsIso5th1;   //!
+   TBranch        *b_pfpVsIso1th2;   //!
+   TBranch        *b_pfpVsIso2th2;   //!
+   TBranch        *b_pfpVsIso3th2;   //!
+   TBranch        *b_pfpVsIso4th2;   //!
+   TBranch        *b_pfpVsIso5th2;   //!
+   TBranch        *b_towerIso1;   //!
+   TBranch        *b_towerIso2;   //!
+   TBranch        *b_towerIso3;   //!
+   TBranch        *b_towerIso4;   //!
+   TBranch        *b_towerIso5;   //!
+   TBranch        *b_towerVsIso1;   //!
+   TBranch        *b_towerVsIso2;   //!
+   TBranch        *b_towerVsIso3;   //!
+   TBranch        *b_towerVsIso4;   //!
+   TBranch        *b_towerVsIso5;   //!
+   TBranch        *b_towerVsSubIso1;   //!
+   TBranch        *b_towerVsSubIso2;   //!
+   TBranch        *b_towerVsSubIso3;   //!
+   TBranch        *b_towerVsSubIso4;   //!
+   TBranch        *b_towerVsSubIso5;   //!
    TBranch        *b_nMu;   //!
    TBranch        *b_muPt;   //!
    TBranch        *b_muEta;   //!
@@ -329,6 +509,32 @@ public :
 void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
 {
    // Set object pointer
+   nPU = 0;
+   puBX = 0;
+   puTrue = 0;
+   mcPID = 0;
+   mcStatus = 0;
+   mcVtx_x = 0;
+   mcVtx_y = 0;
+   mcVtx_z = 0;
+   mcPt = 0;
+   mcEta = 0;
+   mcPhi = 0;
+   mcE = 0;
+   mcEt = 0;
+   mcMass = 0;
+   mcParentage = 0;
+   mcMomPID = 0;
+   mcMomPt = 0;
+   mcMomEta = 0;
+   mcMomPhi = 0;
+   mcMomMass = 0;
+   mcGMomPID = 0;
+   mcIndex = 0;
+   mcCalIsoDR03 = 0;
+   mcCalIsoDR04 = 0;
+   mcTrkIsoDR03 = 0;
+   mcTrkIsoDR04 = 0;
    eleCharge = 0;
    eleChargeConsistent = 0;
    eleEn = 0;
@@ -394,6 +600,7 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    phoSCBrem = 0;
    phohasPixelSeed = 0;
    phoR9 = 0;
+   phoHadTowerOverEm = 0;
    phoHoverE = 0;
    phoSigmaIEtaIEta = 0;
    phoE1x3 = 0;
@@ -436,6 +643,7 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    pho_trackIsoR5PtCut20 = 0;
    pho_swissCrx = 0;
    pho_seedTime = 0;
+   pho_genMatchedIndex = 0;
    pfcIso1 = 0;
    pfcIso2 = 0;
    pfcIso3 = 0;
@@ -451,6 +659,66 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    pfnIso3 = 0;
    pfnIso4 = 0;
    pfnIso5 = 0;
+   pfcVsIso1 = 0;
+   pfcVsIso2 = 0;
+   pfcVsIso3 = 0;
+   pfcVsIso4 = 0;
+   pfcVsIso5 = 0;
+   pfcVsIso1th1 = 0;
+   pfcVsIso2th1 = 0;
+   pfcVsIso3th1 = 0;
+   pfcVsIso4th1 = 0;
+   pfcVsIso5th1 = 0;
+   pfcVsIso1th2 = 0;
+   pfcVsIso2th2 = 0;
+   pfcVsIso3th2 = 0;
+   pfcVsIso4th2 = 0;
+   pfcVsIso5th2 = 0;
+   pfnVsIso1 = 0;
+   pfnVsIso2 = 0;
+   pfnVsIso3 = 0;
+   pfnVsIso4 = 0;
+   pfnVsIso5 = 0;
+   pfnVsIso1th1 = 0;
+   pfnVsIso2th1 = 0;
+   pfnVsIso3th1 = 0;
+   pfnVsIso4th1 = 0;
+   pfnVsIso5th1 = 0;
+   pfnVsIso1th2 = 0;
+   pfnVsIso2th2 = 0;
+   pfnVsIso3th2 = 0;
+   pfnVsIso4th2 = 0;
+   pfnVsIso5th2 = 0;
+   pfpVsIso1 = 0;
+   pfpVsIso2 = 0;
+   pfpVsIso3 = 0;
+   pfpVsIso4 = 0;
+   pfpVsIso5 = 0;
+   pfpVsIso1th1 = 0;
+   pfpVsIso2th1 = 0;
+   pfpVsIso3th1 = 0;
+   pfpVsIso4th1 = 0;
+   pfpVsIso5th1 = 0;
+   pfpVsIso1th2 = 0;
+   pfpVsIso2th2 = 0;
+   pfpVsIso3th2 = 0;
+   pfpVsIso4th2 = 0;
+   pfpVsIso5th2 = 0;
+   towerIso1 = 0;
+   towerIso2 = 0;
+   towerIso3 = 0;
+   towerIso4 = 0;
+   towerIso5 = 0;
+   towerVsIso1 = 0;
+   towerVsIso2 = 0;
+   towerVsIso3 = 0;
+   towerVsIso4 = 0;
+   towerVsIso5 = 0;
+   towerVsSubIso1 = 0;
+   towerVsSubIso2 = 0;
+   towerVsSubIso3 = 0;
+   towerVsSubIso4 = 0;
+   towerVsSubIso5 = 0;
    muPt = 0;
    muEta = 0;
    muPhi = 0;
@@ -478,6 +746,34 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    t->SetBranchAddress("event", &tPhotons.event, &tPhotons.b_event);
    t->SetBranchAddress("lumis", &tPhotons.lumis, &tPhotons.b_lumis);
    t->SetBranchAddress("isData", &tPhotons.isData, &tPhotons.b_isData);
+   t->SetBranchAddress("nPUInfo", &tPhotons.nPUInfo, &tPhotons.b_nPUInfo);
+   t->SetBranchAddress("nPU", &tPhotons.nPU, &tPhotons.b_nPU);
+   t->SetBranchAddress("puBX", &tPhotons.puBX, &tPhotons.b_puBX);
+   t->SetBranchAddress("puTrue", &tPhotons.puTrue, &tPhotons.b_puTrue);
+   t->SetBranchAddress("nMC", &tPhotons.nMC, &tPhotons.b_nMC);
+   t->SetBranchAddress("mcPID", &tPhotons.mcPID, &tPhotons.b_mcPID);
+   t->SetBranchAddress("mcStatus", &tPhotons.mcStatus, &tPhotons.b_mcStatus);
+   t->SetBranchAddress("mcVtx_x", &tPhotons.mcVtx_x, &tPhotons.b_mcVtx_x);
+   t->SetBranchAddress("mcVtx_y", &tPhotons.mcVtx_y, &tPhotons.b_mcVtx_y);
+   t->SetBranchAddress("mcVtx_z", &tPhotons.mcVtx_z, &tPhotons.b_mcVtx_z);
+   t->SetBranchAddress("mcPt", &tPhotons.mcPt, &tPhotons.b_mcPt);
+   t->SetBranchAddress("mcEta", &tPhotons.mcEta, &tPhotons.b_mcEta);
+   t->SetBranchAddress("mcPhi", &tPhotons.mcPhi, &tPhotons.b_mcPhi);
+   t->SetBranchAddress("mcE", &tPhotons.mcE, &tPhotons.b_mcE);
+   t->SetBranchAddress("mcEt", &tPhotons.mcEt, &tPhotons.b_mcEt);
+   t->SetBranchAddress("mcMass", &tPhotons.mcMass, &tPhotons.b_mcMass);
+   t->SetBranchAddress("mcParentage", &tPhotons.mcParentage, &tPhotons.b_mcParentage);
+   t->SetBranchAddress("mcMomPID", &tPhotons.mcMomPID, &tPhotons.b_mcMomPID);
+   t->SetBranchAddress("mcMomPt", &tPhotons.mcMomPt, &tPhotons.b_mcMomPt);
+   t->SetBranchAddress("mcMomEta", &tPhotons.mcMomEta, &tPhotons.b_mcMomEta);
+   t->SetBranchAddress("mcMomPhi", &tPhotons.mcMomPhi, &tPhotons.b_mcMomPhi);
+   t->SetBranchAddress("mcMomMass", &tPhotons.mcMomMass, &tPhotons.b_mcMomMass);
+   t->SetBranchAddress("mcGMomPID", &tPhotons.mcGMomPID, &tPhotons.b_mcGMomPID);
+   t->SetBranchAddress("mcIndex", &tPhotons.mcIndex, &tPhotons.b_mcIndex);
+   t->SetBranchAddress("mcCalIsoDR03", &tPhotons.mcCalIsoDR03, &tPhotons.b_mcCalIsoDR03);
+   t->SetBranchAddress("mcCalIsoDR04", &tPhotons.mcCalIsoDR04, &tPhotons.b_mcCalIsoDR04);
+   t->SetBranchAddress("mcTrkIsoDR03", &tPhotons.mcTrkIsoDR03, &tPhotons.b_mcTrkIsoDR03);
+   t->SetBranchAddress("mcTrkIsoDR04", &tPhotons.mcTrkIsoDR04, &tPhotons.b_mcTrkIsoDR04);
    t->SetBranchAddress("nEle", &tPhotons.nEle, &tPhotons.b_nEle);
    t->SetBranchAddress("eleCharge", &tPhotons.eleCharge, &tPhotons.b_eleCharge);
    t->SetBranchAddress("eleChargeConsistent", &tPhotons.eleChargeConsistent, &tPhotons.b_eleChargeConsistent);
@@ -545,6 +841,7 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    t->SetBranchAddress("phoSCBrem", &tPhotons.phoSCBrem, &tPhotons.b_phoSCBrem);
    t->SetBranchAddress("phohasPixelSeed", &tPhotons.phohasPixelSeed, &tPhotons.b_phohasPixelSeed);
    t->SetBranchAddress("phoR9", &tPhotons.phoR9, &tPhotons.b_phoR9);
+   t->SetBranchAddress("phoHadTowerOverEm", &tPhotons.phoHadTowerOverEm, &tPhotons.b_phoHadTowerOverEm);
    t->SetBranchAddress("phoHoverE", &tPhotons.phoHoverE, &tPhotons.b_phoHoverE);
    t->SetBranchAddress("phoSigmaIEtaIEta", &tPhotons.phoSigmaIEtaIEta, &tPhotons.b_phoSigmaIEtaIEta);
    t->SetBranchAddress("phoE1x3", &tPhotons.phoE1x3, &tPhotons.b_phoE1x3);
@@ -587,6 +884,7 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    t->SetBranchAddress("pho_trackIsoR5PtCut20", &tPhotons.pho_trackIsoR5PtCut20, &tPhotons.b_pho_trackIsoR5PtCut20);
    t->SetBranchAddress("pho_swissCrx", &tPhotons.pho_swissCrx, &tPhotons.b_pho_swissCrx);
    t->SetBranchAddress("pho_seedTime", &tPhotons.pho_seedTime, &tPhotons.b_pho_seedTime);
+   t->SetBranchAddress("pho_genMatchedIndex", &tPhotons.pho_genMatchedIndex, &tPhotons.b_pho_genMatchedIndex);
    t->SetBranchAddress("pfcIso1", &tPhotons.pfcIso1, &tPhotons.b_pfcIso1);
    t->SetBranchAddress("pfcIso2", &tPhotons.pfcIso2, &tPhotons.b_pfcIso2);
    t->SetBranchAddress("pfcIso3", &tPhotons.pfcIso3, &tPhotons.b_pfcIso3);
@@ -602,6 +900,66 @@ void setupPhotonTree(TTree *t,Photons &tPhotons,bool doCheck = 1)
    t->SetBranchAddress("pfnIso3", &tPhotons.pfnIso3, &tPhotons.b_pfnIso3);
    t->SetBranchAddress("pfnIso4", &tPhotons.pfnIso4, &tPhotons.b_pfnIso4);
    t->SetBranchAddress("pfnIso5", &tPhotons.pfnIso5, &tPhotons.b_pfnIso5);
+   t->SetBranchAddress("pfcVsIso1", &tPhotons.pfcVsIso1, &tPhotons.b_pfcVsIso1);
+   t->SetBranchAddress("pfcVsIso2", &tPhotons.pfcVsIso2, &tPhotons.b_pfcVsIso2);
+   t->SetBranchAddress("pfcVsIso3", &tPhotons.pfcVsIso3, &tPhotons.b_pfcVsIso3);
+   t->SetBranchAddress("pfcVsIso4", &tPhotons.pfcVsIso4, &tPhotons.b_pfcVsIso4);
+   t->SetBranchAddress("pfcVsIso5", &tPhotons.pfcVsIso5, &tPhotons.b_pfcVsIso5);
+   t->SetBranchAddress("pfcVsIso1th1", &tPhotons.pfcVsIso1th1, &tPhotons.b_pfcVsIso1th1);
+   t->SetBranchAddress("pfcVsIso2th1", &tPhotons.pfcVsIso2th1, &tPhotons.b_pfcVsIso2th1);
+   t->SetBranchAddress("pfcVsIso3th1", &tPhotons.pfcVsIso3th1, &tPhotons.b_pfcVsIso3th1);
+   t->SetBranchAddress("pfcVsIso4th1", &tPhotons.pfcVsIso4th1, &tPhotons.b_pfcVsIso4th1);
+   t->SetBranchAddress("pfcVsIso5th1", &tPhotons.pfcVsIso5th1, &tPhotons.b_pfcVsIso5th1);
+   t->SetBranchAddress("pfcVsIso1th2", &tPhotons.pfcVsIso1th2, &tPhotons.b_pfcVsIso1th2);
+   t->SetBranchAddress("pfcVsIso2th2", &tPhotons.pfcVsIso2th2, &tPhotons.b_pfcVsIso2th2);
+   t->SetBranchAddress("pfcVsIso3th2", &tPhotons.pfcVsIso3th2, &tPhotons.b_pfcVsIso3th2);
+   t->SetBranchAddress("pfcVsIso4th2", &tPhotons.pfcVsIso4th2, &tPhotons.b_pfcVsIso4th2);
+   t->SetBranchAddress("pfcVsIso5th2", &tPhotons.pfcVsIso5th2, &tPhotons.b_pfcVsIso5th2);
+   t->SetBranchAddress("pfnVsIso1", &tPhotons.pfnVsIso1, &tPhotons.b_pfnVsIso1);
+   t->SetBranchAddress("pfnVsIso2", &tPhotons.pfnVsIso2, &tPhotons.b_pfnVsIso2);
+   t->SetBranchAddress("pfnVsIso3", &tPhotons.pfnVsIso3, &tPhotons.b_pfnVsIso3);
+   t->SetBranchAddress("pfnVsIso4", &tPhotons.pfnVsIso4, &tPhotons.b_pfnVsIso4);
+   t->SetBranchAddress("pfnVsIso5", &tPhotons.pfnVsIso5, &tPhotons.b_pfnVsIso5);
+   t->SetBranchAddress("pfnVsIso1th1", &tPhotons.pfnVsIso1th1, &tPhotons.b_pfnVsIso1th1);
+   t->SetBranchAddress("pfnVsIso2th1", &tPhotons.pfnVsIso2th1, &tPhotons.b_pfnVsIso2th1);
+   t->SetBranchAddress("pfnVsIso3th1", &tPhotons.pfnVsIso3th1, &tPhotons.b_pfnVsIso3th1);
+   t->SetBranchAddress("pfnVsIso4th1", &tPhotons.pfnVsIso4th1, &tPhotons.b_pfnVsIso4th1);
+   t->SetBranchAddress("pfnVsIso5th1", &tPhotons.pfnVsIso5th1, &tPhotons.b_pfnVsIso5th1);
+   t->SetBranchAddress("pfnVsIso1th2", &tPhotons.pfnVsIso1th2, &tPhotons.b_pfnVsIso1th2);
+   t->SetBranchAddress("pfnVsIso2th2", &tPhotons.pfnVsIso2th2, &tPhotons.b_pfnVsIso2th2);
+   t->SetBranchAddress("pfnVsIso3th2", &tPhotons.pfnVsIso3th2, &tPhotons.b_pfnVsIso3th2);
+   t->SetBranchAddress("pfnVsIso4th2", &tPhotons.pfnVsIso4th2, &tPhotons.b_pfnVsIso4th2);
+   t->SetBranchAddress("pfnVsIso5th2", &tPhotons.pfnVsIso5th2, &tPhotons.b_pfnVsIso5th2);
+   t->SetBranchAddress("pfpVsIso1", &tPhotons.pfpVsIso1, &tPhotons.b_pfpVsIso1);
+   t->SetBranchAddress("pfpVsIso2", &tPhotons.pfpVsIso2, &tPhotons.b_pfpVsIso2);
+   t->SetBranchAddress("pfpVsIso3", &tPhotons.pfpVsIso3, &tPhotons.b_pfpVsIso3);
+   t->SetBranchAddress("pfpVsIso4", &tPhotons.pfpVsIso4, &tPhotons.b_pfpVsIso4);
+   t->SetBranchAddress("pfpVsIso5", &tPhotons.pfpVsIso5, &tPhotons.b_pfpVsIso5);
+   t->SetBranchAddress("pfpVsIso1th1", &tPhotons.pfpVsIso1th1, &tPhotons.b_pfpVsIso1th1);
+   t->SetBranchAddress("pfpVsIso2th1", &tPhotons.pfpVsIso2th1, &tPhotons.b_pfpVsIso2th1);
+   t->SetBranchAddress("pfpVsIso3th1", &tPhotons.pfpVsIso3th1, &tPhotons.b_pfpVsIso3th1);
+   t->SetBranchAddress("pfpVsIso4th1", &tPhotons.pfpVsIso4th1, &tPhotons.b_pfpVsIso4th1);
+   t->SetBranchAddress("pfpVsIso5th1", &tPhotons.pfpVsIso5th1, &tPhotons.b_pfpVsIso5th1);
+   t->SetBranchAddress("pfpVsIso1th2", &tPhotons.pfpVsIso1th2, &tPhotons.b_pfpVsIso1th2);
+   t->SetBranchAddress("pfpVsIso2th2", &tPhotons.pfpVsIso2th2, &tPhotons.b_pfpVsIso2th2);
+   t->SetBranchAddress("pfpVsIso3th2", &tPhotons.pfpVsIso3th2, &tPhotons.b_pfpVsIso3th2);
+   t->SetBranchAddress("pfpVsIso4th2", &tPhotons.pfpVsIso4th2, &tPhotons.b_pfpVsIso4th2);
+   t->SetBranchAddress("pfpVsIso5th2", &tPhotons.pfpVsIso5th2, &tPhotons.b_pfpVsIso5th2);
+   t->SetBranchAddress("towerIso1", &tPhotons.towerIso1, &tPhotons.b_towerIso1);
+   t->SetBranchAddress("towerIso2", &tPhotons.towerIso2, &tPhotons.b_towerIso2);
+   t->SetBranchAddress("towerIso3", &tPhotons.towerIso3, &tPhotons.b_towerIso3);
+   t->SetBranchAddress("towerIso4", &tPhotons.towerIso4, &tPhotons.b_towerIso4);
+   t->SetBranchAddress("towerIso5", &tPhotons.towerIso5, &tPhotons.b_towerIso5);
+   t->SetBranchAddress("towerVsIso1", &tPhotons.towerVsIso1, &tPhotons.b_towerVsIso1);
+   t->SetBranchAddress("towerVsIso2", &tPhotons.towerVsIso2, &tPhotons.b_towerVsIso2);
+   t->SetBranchAddress("towerVsIso3", &tPhotons.towerVsIso3, &tPhotons.b_towerVsIso3);
+   t->SetBranchAddress("towerVsIso4", &tPhotons.towerVsIso4, &tPhotons.b_towerVsIso4);
+   t->SetBranchAddress("towerVsIso5", &tPhotons.towerVsIso5, &tPhotons.b_towerVsIso5);
+   t->SetBranchAddress("towerVsSubIso1", &tPhotons.towerVsSubIso1, &tPhotons.b_towerVsSubIso1);
+   t->SetBranchAddress("towerVsSubIso2", &tPhotons.towerVsSubIso2, &tPhotons.b_towerVsSubIso2);
+   t->SetBranchAddress("towerVsSubIso3", &tPhotons.towerVsSubIso3, &tPhotons.b_towerVsSubIso3);
+   t->SetBranchAddress("towerVsSubIso4", &tPhotons.towerVsSubIso4, &tPhotons.b_towerVsSubIso4);
+   t->SetBranchAddress("towerVsSubIso5", &tPhotons.towerVsSubIso5, &tPhotons.b_towerVsSubIso5);
    t->SetBranchAddress("nMu", &tPhotons.nMu, &tPhotons.b_nMu);
    t->SetBranchAddress("muPt", &tPhotons.muPt, &tPhotons.b_muPt);
    t->SetBranchAddress("muEta", &tPhotons.muEta, &tPhotons.b_muEta);

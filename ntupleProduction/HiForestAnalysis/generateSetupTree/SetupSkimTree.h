@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Wed Dec  9 16:49:28 2015 by ROOT version 6.02/10
+// Wed Dec 16 13:48:35 2015 by ROOT version 6.02/10
 // from TTree HltTree/
-// found on file: ../../jetJEC/2015/mc_merged/PYTHIA_QCD30_TuneCUETP8M1_cfi_RECODEBUGpp_757p1_TAGSignalPP_merged.root
+// found on file: ../../../HiForestAOD_withTupel_PbPb_MC_Z30mumuJet_v1.root
 //////////////////////////////////////////////////////////
 #include "commonSetup.h"
 #include <iostream>
@@ -19,21 +19,37 @@ public :
 
    // Declaration of leaf types
    Int_t           ana_step;
-   Int_t           pVertexFilterCutG;
-   Int_t           pVertexFilterCutGloose;
-   Int_t           pVertexFilterCutGtight;
-   Int_t           pVertexFilterCutGplus;
-   Int_t           pVertexFilterCutE;
-   Int_t           pVertexFilterCutEandG;
+   Int_t           pcollisionEventSelection;
+   Int_t           pHBHENoiseFilterResultProducer;
+   Int_t           pprimaryVertexFilter;
+   Int_t           phfCoincFilter1;
+   Int_t           phfCoincFilter2;
+   Int_t           phfCoincFilter3;
+   Int_t           phfCoincFilter4;
+   Int_t           phfCoincFilter5;
+   Int_t           pclusterCompatibilityFilter;
+   Int_t           HBHENoiseFilterResultRun1;
+   Int_t           HBHENoiseFilterResultRun2Loose;
+   Int_t           HBHENoiseFilterResultRun2Tight;
+   Int_t           HBHENoiseFilterResult;
+   Int_t           HBHEIsoNoiseFilterResult;
 
    // List of branches
    TBranch        *b_ana_step;   //!
-   TBranch        *b_pVertexFilterCutG;   //!
-   TBranch        *b_pVertexFilterCutGloose;   //!
-   TBranch        *b_pVertexFilterCutGtight;   //!
-   TBranch        *b_pVertexFilterCutGplus;   //!
-   TBranch        *b_pVertexFilterCutE;   //!
-   TBranch        *b_pVertexFilterCutEandG;   //!
+   TBranch        *b_pcollisionEventSelection;   //!
+   TBranch        *b_pHBHENoiseFilterResultProducer;   //!
+   TBranch        *b_pprimaryVertexFilter;   //!
+   TBranch        *b_phfCoincFilter1;   //!
+   TBranch        *b_phfCoincFilter2;   //!
+   TBranch        *b_phfCoincFilter3;   //!
+   TBranch        *b_phfCoincFilter4;   //!
+   TBranch        *b_phfCoincFilter5;   //!
+   TBranch        *b_pclusterCompatibilityFilter;   //!
+   TBranch        *b_HBHENoiseFilterResultRun1;   //!
+   TBranch        *b_HBHENoiseFilterResultRun2Loose;   //!
+   TBranch        *b_HBHENoiseFilterResultRun2Tight;   //!
+   TBranch        *b_HBHENoiseFilterResult;   //!
+   TBranch        *b_HBHEIsoNoiseFilterResult;   //!
 
 };
 
@@ -42,12 +58,20 @@ void setupSkimTree(TTree *t,Skims &tSkims,bool doCheck = 1)
 {
    // Set branch addresses and branch pointers
    t->SetBranchAddress("ana_step", &tSkims.ana_step, &tSkims.b_ana_step);
-   t->SetBranchAddress("pVertexFilterCutG", &tSkims.pVertexFilterCutG, &tSkims.b_pVertexFilterCutG);
-   t->SetBranchAddress("pVertexFilterCutGloose", &tSkims.pVertexFilterCutGloose, &tSkims.b_pVertexFilterCutGloose);
-   t->SetBranchAddress("pVertexFilterCutGtight", &tSkims.pVertexFilterCutGtight, &tSkims.b_pVertexFilterCutGtight);
-   t->SetBranchAddress("pVertexFilterCutGplus", &tSkims.pVertexFilterCutGplus, &tSkims.b_pVertexFilterCutGplus);
-   t->SetBranchAddress("pVertexFilterCutE", &tSkims.pVertexFilterCutE, &tSkims.b_pVertexFilterCutE);
-   t->SetBranchAddress("pVertexFilterCutEandG", &tSkims.pVertexFilterCutEandG, &tSkims.b_pVertexFilterCutEandG);
+   t->SetBranchAddress("pcollisionEventSelection", &tSkims.pcollisionEventSelection, &tSkims.b_pcollisionEventSelection);
+   t->SetBranchAddress("pHBHENoiseFilterResultProducer", &tSkims.pHBHENoiseFilterResultProducer, &tSkims.b_pHBHENoiseFilterResultProducer);
+   t->SetBranchAddress("pprimaryVertexFilter", &tSkims.pprimaryVertexFilter, &tSkims.b_pprimaryVertexFilter);
+   t->SetBranchAddress("phfCoincFilter1", &tSkims.phfCoincFilter1, &tSkims.b_phfCoincFilter1);
+   t->SetBranchAddress("phfCoincFilter2", &tSkims.phfCoincFilter2, &tSkims.b_phfCoincFilter2);
+   t->SetBranchAddress("phfCoincFilter3", &tSkims.phfCoincFilter3, &tSkims.b_phfCoincFilter3);
+   t->SetBranchAddress("phfCoincFilter4", &tSkims.phfCoincFilter4, &tSkims.b_phfCoincFilter4);
+   t->SetBranchAddress("phfCoincFilter5", &tSkims.phfCoincFilter5, &tSkims.b_phfCoincFilter5);
+   t->SetBranchAddress("pclusterCompatibilityFilter", &tSkims.pclusterCompatibilityFilter, &tSkims.b_pclusterCompatibilityFilter);
+   t->SetBranchAddress("HBHENoiseFilterResultRun1", &tSkims.HBHENoiseFilterResultRun1, &tSkims.b_HBHENoiseFilterResultRun1);
+   t->SetBranchAddress("HBHENoiseFilterResultRun2Loose", &tSkims.HBHENoiseFilterResultRun2Loose, &tSkims.b_HBHENoiseFilterResultRun2Loose);
+   t->SetBranchAddress("HBHENoiseFilterResultRun2Tight", &tSkims.HBHENoiseFilterResultRun2Tight, &tSkims.b_HBHENoiseFilterResultRun2Tight);
+   t->SetBranchAddress("HBHENoiseFilterResult", &tSkims.HBHENoiseFilterResult, &tSkims.b_HBHENoiseFilterResult);
+   t->SetBranchAddress("HBHEIsoNoiseFilterResult", &tSkims.HBHEIsoNoiseFilterResult, &tSkims.b_HBHEIsoNoiseFilterResult);
    if (doCheck) {
    }
 }
