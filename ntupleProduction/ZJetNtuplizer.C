@@ -7,6 +7,7 @@ class Particle
       int pdg;
       int charge;
       TLorentzVector p4;
+      vector<Particle> daughter;
    void SetPtEtaPhiM(double ppt, double peta, double pphi, double pmass, int pcharge){
       p4.SetPtEtaPhiM(ppt,peta,pphi,pmass);
       charge=pcharge;
@@ -15,6 +16,23 @@ class Particle
    {
      p4=p;
      charge=pcharge;
+     
+   }
+   
+   void combination(Particle a,Particle b)
+   {
+      p4 = a.p4+b.p4;
+      charge = a.charge+b.charge;
+      daughter.clear();
+      daughter.push_back(a);
+      daughter.push_back(b);
+      //cout <<"good good"<<endl;
+   }
+   
+   void clear()
+   {
+      p4.Clear();
+      daughter.clear();
    }
    
    private:
@@ -29,6 +47,10 @@ class ZJetTree
    float genZeta;
    float genZphi;
    float genZmass;
+   float genZmu1pt;
+   float genZmu2pt;
+   
+   
    // Reco level info
    float Zpt;
    float Zeta;
@@ -47,6 +69,8 @@ class ZJetTree
       t->Branch("genZeta",&genZeta);
       t->Branch("genZphi",&genZphi);
       t->Branch("genZmass",&genZmass);
+      t->Branch("genZmu1pt",&genZmu1pt);
+      t->Branch("genZmu2pt",&genZmu2pt);
 
       // Reco level info
       t->Branch("Zpt",&Zpt);
@@ -62,6 +86,8 @@ class ZJetTree
       genZeta=0;
       genZphi=0;
       genZmass=0;
+      genZmu1pt=0;
+      genZmu2pt=0;
       // Reco level info
       Zpt=0;
       Zeta=0;
@@ -69,6 +95,7 @@ class ZJetTree
       Zmass=0;
       Zcharge=0;
       hiBin=0;
+      
    }
    
 };
@@ -109,7 +136,7 @@ void ZJetNtuplizer(char *infName)
    // output file
    TFile *outf = new TFile("ZJetTree.root","recreate");
    
-   // clone a jet tree
+   	// clone a jet tree
    TTree *tJet = h.akPu3PFJetTree->CloneTree(0);
    tJet->SetMaxTreeSize(4000000000);
    tJet->SetName("tJet");
@@ -131,14 +158,15 @@ void ZJetNtuplizer(char *infName)
    for (int i=0;i<h.GetEntries();i++)
    {
       h.GetEntry(i);
+      ZJet.clear();
       if (i%1000==0) cout <<i<<" / "<<h.GetEntries()<<endl;
       ZJet.hiBin=h.evt.hiBin;
-      genZ.p4=zero;
+      genZ.clear();
       
       // fill Gen info
       // Assuming there is only one Z in the event
       for (unsigned int j=0;j<h.genparticle.pt->size();j++){
-         if (fabs(h.genparticle.pdg->at(j))!=13) continue;
+	 if (fabs(h.genparticle.pdg->at(j))!=13) continue;
          if (h.genparticle.pt->at(j)<20) continue;
          if (fabs(h.genparticle.eta->at(j))>2.4) continue;
          genmu1.SetPtEtaPhiM( 	h.genparticle.pt->at(j),   
@@ -148,7 +176,7 @@ void ZJetNtuplizer(char *infName)
 			      	h.genparticle.chg->at(j));
  	 
 	 for (unsigned int k=j+1;k<h.genparticle.pt->size();k++){
-            if (fabs(h.genparticle.pdg->at(k)!=13)) continue;
+            if (fabs(h.genparticle.pdg->at(k))!=13) continue;
             if (h.genparticle.pt->at(k)<20) continue;
             if (fabs(h.genparticle.eta->at(k))>2.4) continue;
 	    genmu2.SetPtEtaPhiM( 	h.genparticle.pt->at(k),   
@@ -156,16 +184,20 @@ void ZJetNtuplizer(char *infName)
                               		h.genparticle.phi->at(k),
 			      		0.105658,
 					h.genparticle.chg->at(k));
-	    genZ.SetP4(genmu1.p4+genmu2.p4,genmu1.charge+genmu2.charge);
-	    if (genZ.charge!=0) continue;
-	    if (genZ.p4.M()<60) continue;		
+	    
+	    if (genmu1.charge+genmu2.charge!=0) continue;
+	    genZ.combination(genmu1,genmu2);	
+	    //if (genZ.p4.M()<60) continue;
  	 }		         
       }
-      ZJet.genZpt=genZ.p4.Pt();
-      ZJet.genZeta=genZ.p4.Eta();
-      ZJet.genZphi=genZ.p4.Phi();
-      ZJet.genZmass=genZ.p4.M();
-      
+      if (genZ.daughter.size()==2) {
+         ZJet.genZpt=genZ.p4.Pt();
+         ZJet.genZeta=genZ.p4.Eta();
+         ZJet.genZphi=genZ.p4.Phi();
+         ZJet.genZmass=genZ.p4.M();
+         ZJet.genZmu1pt=genZ.daughter.at(0).p4.Pt();
+         ZJet.genZmu2pt=genZ.daughter.at(1).p4.Pt();
+      }
       Z.p4=zero;
       // fill Reco info      
       for (unsigned int j=0;j<h.photon.muPt->size();j++) {
@@ -174,15 +206,15 @@ void ZJetNtuplizer(char *infName)
 	 for (unsigned int k=j+1;k<h.photon.muPt->size();k++) {
             if (!goodMuon(h.photon,k)||h.photon.muPt->at(k)<20||fabs(h.photon.muEta->at(k))>2.4) continue;
             mu2.SetPtEtaPhiM(h.photon.muPt->at(k),h.photon.muEta->at(k),h.photon.muPhi->at(k),0.105658,h.photon.muCharge->at(k));
-            Z.SetP4(mu1.p4+mu2.p4,mu1.charge+mu2.charge);
+            
+	    if (mu1.charge+mu2.charge!=0) continue;
+	    Z.SetP4(mu1.p4+mu2.p4,mu1.charge+mu2.charge);
 	    
-	    if (Z.charge!=0) continue;
-	    if (Z.p4.M()<60) continue;
          }
          
       }
       ZJet.Zpt=Z.p4.Pt();
-      ZJet.Zeta=Z.p4.Eta();\
+      ZJet.Zeta=Z.p4.Eta();
       
       ZJet.Zphi=Z.p4.Phi();
       ZJet.Zmass=Z.p4.M();
